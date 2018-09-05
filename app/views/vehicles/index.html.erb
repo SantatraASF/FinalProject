@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vehicles</h1>
+
+
+<%= form_tag vehicles_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Owner names</th>
+      <th>N°cin</th>
+      <th>Vehicules type</th>
+      <th>Mark</th>
+      <th>Color</th>
+      <th>N°engines</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.date %></td>
+        <td><%= vehicle.owner_names %></td>
+        <td><%= vehicle.n°cin %></td>
+        <td><%= vehicle.vehicules_type %></td>
+        <td><%= vehicle.mark %></td>
+        <td><%= vehicle.color %></td>
+        <td><%= vehicle.n°engines %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehicle', new_vehicle_path %>
+
+

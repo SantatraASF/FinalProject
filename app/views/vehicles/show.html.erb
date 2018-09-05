@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @vehicle.date %>
+</p>
+
+<p>
+  <strong>Owner names:</strong>
+  <%= @vehicle.owner_names %>
+</p>
+
+<p>
+  <strong>N°cin:</strong>
+  <%= @vehicle.n°cin %>
+</p>
+
+<p>
+  <strong>Vehicules type:</strong>
+  <%= @vehicle.vehicules_type %>
+</p>
+
+<p>
+  <strong>Mark:</strong>
+  <%= @vehicle.mark %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @vehicle.color %>
+</p>
+
+<p>
+  <strong>N°engines:</strong>
+  <%= @vehicle.n°engines %>
+</p>
+
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+<%= link_to 'Back', vehicles_path %>
